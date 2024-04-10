@@ -126,10 +126,17 @@ class Trader:
                 orders: List[Order] = []
                 best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
                 best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
-                traderData = str((best_bid + best_ask)//2)
-                if (state.traderData == ""):
-                    continue
-                acceptable_price = int(state.traderData);  # Participant should calculate this value
+
+                middle_price = (best_ask + best_bid) / 2
+                if(state.traderData == ""):
+                    prev_ema = 0
+                else:
+                    prev_ema = float(state.traderData)
+                alpha = 2 / (1 + 10)
+                ema = alpha * middle_price + (1 - alpha) * prev_ema
+                acceptable_price = ema
+                traderData = str(ema)
+
                 if len(order_depth.sell_orders) != 0:
                     best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
                     if int(best_ask) < acceptable_price:
@@ -138,8 +145,7 @@ class Trader:
                     best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
                     if int(best_bid) > acceptable_price:
                         orders.append(Order(product, best_bid, -best_bid_amount))
-            result[product] = orders
-    
+                result[product] = orders
     
         # traderData = str((best_bid + best_ask)//2) # String value holding Trader state data required. It will be delivered as TradingState.traderData on next execution.
         
