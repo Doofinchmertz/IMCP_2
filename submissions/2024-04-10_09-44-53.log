@@ -1,0 +1,522 @@
+Sandbox logs:
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c07d2e33-398f-4d78-b6bf-808dad773c5d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c07d2e33-398f-4d78-b6bf-808dad773c5d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 0
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0c0ecb64-71e0-4d3b-bb45-5e2a5fd4bbcf\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0c0ecb64-71e0-4d3b-bb45-5e2a5fd4bbcf\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"a64f55b3-0b96-4d3b-b00e-039b7ce757fe\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"a64f55b3-0b96-4d3b-b00e-039b7ce757fe\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"cbc6c725-ec90-4db3-a9c3-201e3fd95c89\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"cbc6c725-ec90-4db3-a9c3-201e3fd95c89\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"292c8401-6bbf-4fc9-a728-0874354b3f80\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"292c8401-6bbf-4fc9-a728-0874354b3f80\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d975e7ae-1af4-4426-96f1-11588ef0c051\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d975e7ae-1af4-4426-96f1-11588ef0c051\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c79c72e4-6861-4a47-9467-0849a05b2dc2\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c79c72e4-6861-4a47-9467-0849a05b2dc2\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8b9551d9-cdfb-4bb7-9729-3bee87e42811\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8b9551d9-cdfb-4bb7-9729-3bee87e42811\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1fa7e103-c50a-42de-94b7-7e6b24e99988\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1fa7e103-c50a-42de-94b7-7e6b24e99988\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"37066b88-292c-4899-9c0d-352b00f06373\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"37066b88-292c-4899-9c0d-352b00f06373\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"904c2c93-9b19-4004-93f6-a2306b71f0c7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"904c2c93-9b19-4004-93f6-a2306b71f0c7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"65174306-4831-4b35-b870-c91a582d372d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"65174306-4831-4b35-b870-c91a582d372d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"310ae6d2-a2b0-4599-aa86-c38d39e8fd0f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"310ae6d2-a2b0-4599-aa86-c38d39e8fd0f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"43e42e40-c4aa-41ec-8d8b-fb13114fa2cd\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"43e42e40-c4aa-41ec-8d8b-fb13114fa2cd\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"22c92323-a334-4a56-afc9-43cb843c348b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"22c92323-a334-4a56-afc9-43cb843c348b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"269858a1-c90f-4738-a386-6d5c0b5e1a0f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"269858a1-c90f-4738-a386-6d5c0b5e1a0f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0f622d9a-cca3-42a2-a4b4-5e6e02853e2f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0f622d9a-cca3-42a2-a4b4-5e6e02853e2f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2429f557-2d7d-4876-a806-77e9bb8d3086\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2429f557-2d7d-4876-a806-77e9bb8d3086\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"38405015-f617-4712-baa2-aba0e7e383f4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"38405015-f617-4712-baa2-aba0e7e383f4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"81a3fa2b-5e47-442f-b0e2-06753013611a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"81a3fa2b-5e47-442f-b0e2-06753013611a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 1900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9456c67d-51ec-420d-99f2-465d569c5c4f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9456c67d-51ec-420d-99f2-465d569c5c4f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"600f6d51-d0fa-4a05-ba62-05ee668b4265\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"600f6d51-d0fa-4a05-ba62-05ee668b4265\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b5ef1e58-dff7-4c54-ad21-c0ea8b8e069d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b5ef1e58-dff7-4c54-ad21-c0ea8b8e069d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e83a7c63-573d-4a78-af50-c6f7e54344eb\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e83a7c63-573d-4a78-af50-c6f7e54344eb\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8cde08bb-fdcb-47dc-95a6-918933e6840a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8cde08bb-fdcb-47dc-95a6-918933e6840a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b39c0115-2add-48e4-9917-76c02c5876e3\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b39c0115-2add-48e4-9917-76c02c5876e3\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"67a0f0f8-015d-4657-bd3e-6fe312531960\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"67a0f0f8-015d-4657-bd3e-6fe312531960\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"06ed9abd-0d1c-4547-8e37-f657f890ba35\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"06ed9abd-0d1c-4547-8e37-f657f890ba35\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"dff3e4f0-371d-4720-8aab-6c47f8892527\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"dff3e4f0-371d-4720-8aab-6c47f8892527\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2eed886d-48dc-49f0-a005-f6a001373baf\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2eed886d-48dc-49f0-a005-f6a001373baf\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 2900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6a678c25-b79c-4b5e-a1a0-8ebc0ddea5c7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6a678c25-b79c-4b5e-a1a0-8ebc0ddea5c7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"58143528-eab1-41b4-88d7-dd86e463ada0\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"58143528-eab1-41b4-88d7-dd86e463ada0\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1723553a-22ae-46f1-b6e5-2726730cdf7a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1723553a-22ae-46f1-b6e5-2726730cdf7a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9148a2c8-d654-4444-858d-2ac20fbf15e4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9148a2c8-d654-4444-858d-2ac20fbf15e4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"822ccee1-42b6-4a06-858c-6bb5ddc47c6c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"822ccee1-42b6-4a06-858c-6bb5ddc47c6c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c23556d8-b1d4-4690-9389-23ae4371ce52\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c23556d8-b1d4-4690-9389-23ae4371ce52\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c9dd1ec8-41c9-47f6-8d7a-e593c4df8911\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c9dd1ec8-41c9-47f6-8d7a-e593c4df8911\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4152952f-f850-43c5-9227-4df97e1478cc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4152952f-f850-43c5-9227-4df97e1478cc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"01a8f6fd-8ae6-4eeb-b2cb-55c3e115ddea\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"01a8f6fd-8ae6-4eeb-b2cb-55c3e115ddea\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ca2fa9cd-b788-4689-abc0-4b241caf510f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ca2fa9cd-b788-4689-abc0-4b241caf510f\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 3900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"411bbf22-a097-4e6a-b546-c3c922b04c25\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"411bbf22-a097-4e6a-b546-c3c922b04c25\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d2362f75-820c-4b13-80c0-5642f7ab5293\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d2362f75-820c-4b13-80c0-5642f7ab5293\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3fd8c20e-decb-4f42-835f-5e1d89e797dd\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3fd8c20e-decb-4f42-835f-5e1d89e797dd\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2abed0c9-69b7-4e50-8f90-f960cea33a09\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"2abed0c9-69b7-4e50-8f90-f960cea33a09\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"417617f2-5afb-4c94-a95a-ef7e09f07607\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"417617f2-5afb-4c94-a95a-ef7e09f07607\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3e87f9c1-bb4f-4751-94fa-d2d70b802ef5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3e87f9c1-bb4f-4751-94fa-d2d70b802ef5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3e12a4f8-7ee7-4864-8dfd-4b3e2b42b668\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"3e12a4f8-7ee7-4864-8dfd-4b3e2b42b668\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"fbe6956f-d0c3-46e2-9433-e973f12d729e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"fbe6956f-d0c3-46e2-9433-e973f12d729e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b33c48ef-b31a-4f67-8b17-583225645ffc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"b33c48ef-b31a-4f67-8b17-583225645ffc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1b077a2c-b6fb-409a-b726-e03f72333754\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"1b077a2c-b6fb-409a-b726-e03f72333754\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 4900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4110637e-dca4-4ab1-953c-d17e69ca66be\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4110637e-dca4-4ab1-953c-d17e69ca66be\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"aaaf29d8-2355-42d2-8d26-bd4b88c64efa\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"aaaf29d8-2355-42d2-8d26-bd4b88c64efa\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"db9e417f-48bc-4897-810a-6affdc3cfa61\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"db9e417f-48bc-4897-810a-6affdc3cfa61\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d5835906-b45c-4b7f-8ace-6e9e9851b438\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d5835906-b45c-4b7f-8ace-6e9e9851b438\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d8e33c97-a058-4ef0-a5d1-c3523d15ff8c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d8e33c97-a058-4ef0-a5d1-c3523d15ff8c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"da131054-37f0-41fc-aba8-e2adf7507bef\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"da131054-37f0-41fc-aba8-e2adf7507bef\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"95dfae71-3bcb-454d-8484-44acbf382599\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"95dfae71-3bcb-454d-8484-44acbf382599\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"eecf3507-de82-4a75-b29e-ff444e5228f8\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"eecf3507-de82-4a75-b29e-ff444e5228f8\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"751194ab-9b2d-4307-8913-70b8deb6418e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"751194ab-9b2d-4307-8913-70b8deb6418e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"64af19e9-8904-44d9-a958-6910ac435da7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"64af19e9-8904-44d9-a958-6910ac435da7\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 5900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c8712974-505b-418c-af36-db4e26ad68a5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c8712974-505b-418c-af36-db4e26ad68a5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9fa29d53-4981-401e-aa2c-6378e7c81471\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9fa29d53-4981-401e-aa2c-6378e7c81471\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0cdcc047-b57e-4eb6-87f8-86755e111afc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"0cdcc047-b57e-4eb6-87f8-86755e111afc\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"f04442a1-aa03-4b4a-9d93-3b5671004d94\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"f04442a1-aa03-4b4a-9d93-3b5671004d94\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"a30782f4-e5ba-4e6e-9ad3-3deaa68793c1\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"a30782f4-e5ba-4e6e-9ad3-3deaa68793c1\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"460f1b6b-65e6-4b70-a107-e4c6fa7e4bea\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"460f1b6b-65e6-4b70-a107-e4c6fa7e4bea\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"69abfc83-9607-4fd7-b218-4874c75c886b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"69abfc83-9607-4fd7-b218-4874c75c886b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4fe1114e-bcd9-497d-980b-baabbba925b9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4fe1114e-bcd9-497d-980b-baabbba925b9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6bac09f1-ae2b-4e07-af48-f153d967e63c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6bac09f1-ae2b-4e07-af48-f153d967e63c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"56197c4a-54d0-410a-8a0b-07f7b61ab310\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"56197c4a-54d0-410a-8a0b-07f7b61ab310\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 6900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ae939e26-87a4-4567-80d3-775c8c8c676e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ae939e26-87a4-4567-80d3-775c8c8c676e\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7d02e44a-e996-4ff0-934f-6245a0cad184\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7d02e44a-e996-4ff0-934f-6245a0cad184\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9d1d38cf-4cb6-4411-83c4-d060233549c9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9d1d38cf-4cb6-4411-83c4-d060233549c9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"45c2ba6e-1c83-4906-9a77-b84c5dab2a4a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"45c2ba6e-1c83-4906-9a77-b84c5dab2a4a\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c6dd6608-388d-48cb-8442-b215d9793f30\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"c6dd6608-388d-48cb-8442-b215d9793f30\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9f61f11d-4eb0-4ea9-bbaf-b705cb8feeeb\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9f61f11d-4eb0-4ea9-bbaf-b705cb8feeeb\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"65553b7b-9917-42ae-99fe-d32944d533d9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"65553b7b-9917-42ae-99fe-d32944d533d9\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"83128ecc-7e10-4761-82c0-0f8293a82f23\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"83128ecc-7e10-4761-82c0-0f8293a82f23\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e54bc686-9178-4191-b8ee-35f702d97b59\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e54bc686-9178-4191-b8ee-35f702d97b59\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e2d956ce-f6c5-460f-9bff-29b873a5bbba\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e2d956ce-f6c5-460f-9bff-29b873a5bbba\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 7900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9ca2b3f2-8748-424b-9c93-22d7799bbfd6\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"9ca2b3f2-8748-424b-9c93-22d7799bbfd6\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"17d52234-b855-4caf-9b2a-519306f16ee5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"17d52234-b855-4caf-9b2a-519306f16ee5\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"095e39b9-3825-4cdd-ac2d-da6867d5839b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"095e39b9-3825-4cdd-ac2d-da6867d5839b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8136e807-619d-4029-b086-94d5cba4b742\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8136e807-619d-4029-b086-94d5cba4b742\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"cfa4a267-953e-4669-90b7-f51b7d9ed905\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"cfa4a267-953e-4669-90b7-f51b7d9ed905\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"843de66a-4cbd-4fc1-a359-a8ac1851ec99\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"843de66a-4cbd-4fc1-a359-a8ac1851ec99\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"90f20ce5-5615-4a5f-9484-b405d17afef6\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"90f20ce5-5615-4a5f-9484-b405d17afef6\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ca204d9d-6e64-412e-b8a3-a4f8bb07dfc2\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ca204d9d-6e64-412e-b8a3-a4f8bb07dfc2\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7453f2b0-3d62-47d1-9d57-e4ce2f19958d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7453f2b0-3d62-47d1-9d57-e4ce2f19958d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7f79995a-da06-4f1c-880c-78f7b245dbf4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"7f79995a-da06-4f1c-880c-78f7b245dbf4\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 8900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"66872c20-0f35-45f2-b4f8-139075bb1f91\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"66872c20-0f35-45f2-b4f8-139075bb1f91\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9000
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ee25b1ab-898a-41ef-9e0a-2f2b42495630\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ee25b1ab-898a-41ef-9e0a-2f2b42495630\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9100
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4b6dfbb1-6caa-4466-90bf-51f7e7910d2c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"4b6dfbb1-6caa-4466-90bf-51f7e7910d2c\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9200
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8210f0df-55cf-49e0-bb16-45811372a04b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"8210f0df-55cf-49e0-bb16-45811372a04b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9300
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"62648a6d-48aa-4198-a969-1dfd34b2303b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"62648a6d-48aa-4198-a969-1dfd34b2303b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9400
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"dd58cd0a-cdb3-4180-b12b-d48a66441d19\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"dd58cd0a-cdb3-4180-b12b-d48a66441d19\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9500
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e45a6084-3036-4dd3-9dc8-b1a4a8138968\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"e45a6084-3036-4dd3-9dc8-b1a4a8138968\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9600
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6c7bf6c2-b26a-4190-8679-a2abe9775676\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"6c7bf6c2-b26a-4190-8679-a2abe9775676\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9700
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ce4d7952-9104-43f1-ac6a-805ebd1fd58b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"ce4d7952-9104-43f1-ac6a-805ebd1fd58b\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9800
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d75c8f68-c71a-4c9c-8c68-7ab7a8aa4e4d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"d75c8f68-c71a-4c9c-8c68-7ab7a8aa4e4d\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 9900
+}
+{
+  "sandboxLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"52cfebf6-d7a6-4011-ba3e-5130c5250f26\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "lambdaLog": "{\"errorMessage\": \"Syntax error in module 'app': unterminated string literal (detected at line 128) (trader.py, line 128)\", \"errorType\": \"Runtime.UserCodeSyntaxError\", \"requestId\": \"52cfebf6-d7a6-4011-ba3e-5130c5250f26\", \"stackTrace\": [\"  File \\\"/var/task/trader.py\\\" Line 128\\n                if product == \\\"AMETHYSTS:\"]}",
+  "timestamp": 10000
+}
+{
+  "sandboxLog": "Lambda errors have reached maximum value for submission 5e3c4e5a-5fc3-4bd0-8299-96a4710b66ce",
+  "lambdaLog": null,
+  "timestamp": 82578
+}
+
+
+
+Activities log:
+day;timestamp;product;bid_price_1;bid_volume_1;bid_price_2;bid_volume_2;bid_price_3;bid_volume_3;ask_price_1;ask_volume_1;ask_price_2;ask_volume_2;ask_price_3;ask_volume_3;mid_price;profit_and_loss
+
+
+
+
+Trade History:
+null
