@@ -114,9 +114,14 @@ class Trader:
     
     position = {"AMETHYSTS": 0, "STARFRUIT": 0}
     starfruit_cache = []
-    starfruit_dim = 4
+    starfruit_dim = 3
 
-    def compute_starfruit_macd(mid_price, ema_fast, ema_slow, signal_line):
+    def compute_starfruit_macd(self, mid_price):
+        
+        # Using history
+        ema_fast = self.starfruit_cache.pop(0)
+        ema_slow = self.starfruit_cache.pop(0)
+        macd_line = self.starfruit_cache.pop(0)
 
         ema_fast = 0.95 * ema_fast + 0.05 * mid_price
         # Calculate the long-term exponential moving average (EMA)
@@ -127,6 +132,12 @@ class Trader:
         signal_line = 0.95 * signal_line + 0.05 * macd_line
         # Calculate the MACD histogram
         macd_hist = macd_line - signal_line
+
+        # Updating values to be stored
+        self.starfruit_cache.append(macd_line)
+        self.starfruit_cache.append(ema_slow)
+        self.starfruit_cache.append(ema_fast)
+
         return ema_fast, ema_slow, macd_line, signal_line, macd_hist
 
     def compute_orders_sf(self, order_depth, macd_hist):
@@ -216,13 +227,15 @@ class Trader:
 
     def run(self, state: TradingState):
         result = {'AMETHYSTS': [], 'STARFRUIT': []}
-        # traderData = ""
+        traderData = ""
 
         for key, val in state.position.items():
             self.position[key] = val
 
-        if len(self.starfruit_cache) == self.starfruit_dim:
-            self.starfruit_cache.pop(0)
+        
+
+        # if len(self.starfruit_cache) == self.starfruit_dim:
+        #     self.starfruit_cache.pop(0)
         
         ## buy_orders.items() = list of tuples of bids in decreasing order
         ## sell_orders.items() = list of tuples of asks in increasing order
@@ -230,7 +243,8 @@ class Trader:
         best_bid_sf, best_bid_amount_sf = list(state.order_depths["STARFRUIT"].buy_orders.items())[0]
         best_ask_sf, best_ask_amount_sf = list(state.order_depths["STARFRUIT"].sell_orders.items())[0]
 
-        self.starfruit_cache.append((best_bid_sf + best_ask_sf)/2)
+        if len(self.starfruit_cache) == 0:
+            self.starfruit_cache.append(0, best_ask_sf, best_bid_sf)
 
         INF = 1e9
         starfruit_lb = 1
@@ -253,9 +267,9 @@ class Trader:
 
         # result["AMETHYSTS"] += self.compute_orders_amethysts(state.order_depths["AMETHYSTS"], amethysts_lb, amethysts_ub)
 
-        data_toremember = {'ema_fast': ema_fast, 'ema_slow': ema_slow, 'macd_line': macd_line}
-        traderData = jsonpickle.encode(data_toremember)
-        
+        # data_toremember = {'ema_fast': ema_fast, 'ema_slow': ema_slow, 'macd_line': macd_line}
+        # traderData = jsonpickle.encode(data_toremember)
+
         conversions = 1
         logger.flush(state, result, conversions, traderData)
         return result, conversions, traderData
