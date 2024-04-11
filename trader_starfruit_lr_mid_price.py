@@ -115,8 +115,8 @@ class Trader:
     starfruit_dim = 4
 
     def calc_next_price_starfruit(self):
-        coeff = [0.19847666, 0.20319141, 0.25784436, 0.34024443]
-        intercept = 1.2265551526497802
+        coeff = [0.18895127, 0.20771801, 0.26114406, 0.34171985]
+        intercept = 2.3552758852292754
         nxt_price = intercept
         for i, val in enumerate(self.starfruit_cache):
             nxt_price += val * coeff[i]
