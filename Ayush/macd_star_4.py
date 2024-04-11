@@ -2,7 +2,7 @@ from datamodel import Listing, Observation, Order, OrderDepth, ProsperityEncoder
 from typing import Any
 import string
 import json
-import jsonpickle
+# import jsonpickle
 
 
 class Logger:
@@ -112,7 +112,7 @@ logger = Logger()
 
 class Trader:
     
-    position = {"AMETHYSTS": 0, "STARFRUIT": 0}
+    position = {"STARFRUIT": 0}
     starfruit_cache = []
     starfruit_dim = 3
 
@@ -184,56 +184,13 @@ class Trader:
                 curr_pos += num
 
         return orders
-    
-    # def compute_orders_amethysts(self, order_depth, acc_bid, acc_ask):
-    #     AMETHYSTS_POS_LIMIT = 20
-    #     orders: list[Order] = []
-
-    #     sell_orders = list(order_depth.sell_orders.items())
-    #     buy_orders = list(order_depth.buy_orders.items())
-    #     best_ask, best_ask_amount = sell_orders[0]
-    #     best_bid, best_bid_amount = buy_orders[0]
-
-    #     undercut_buy = best_bid + 1
-    #     undercut_sell = best_ask - 1
-
-    #     bid_price = min(undercut_buy, acc_bid + 1)
-    #     ask_price = max(undercut_sell, acc_ask - 1)
-
-    #     curr_pos = self.position["AMETHYSTS"]
-
-    #     for ask, vol in sell_orders:
-    #         if ((ask < acc_bid)) and curr_pos < AMETHYSTS_POS_LIMIT:
-    #             order_for = min(-vol, AMETHYSTS_POS_LIMIT - curr_pos)
-    #             curr_pos += order_for
-    #             assert(order_for >= 0)
-    #             orders.append(Order("AMETHYSTS", ask, order_for))
-        
-    #     if curr_pos <= AMETHYSTS_POS_LIMIT:
-    #         num = AMETHYSTS_POS_LIMIT - curr_pos
-    #         orders.append(Order("AMETHYSTS", bid_price, num))
-    #         curr_pos += num
-        
-    #     curr_pos = self.position["AMETHYSTS"]
-
-    #     for bid, vol in buy_orders:
-    #         if ((bid > acc_ask)) and curr_pos > -AMETHYSTS_POS_LIMIT:
-    #             order_for = max(-vol, -AMETHYSTS_POS_LIMIT-curr_pos)
-    #             curr_pos += order_for
-    #             assert(order_for <= 0)
-    #             orders.append(Order("AMETHYSTS", bid, order_for))
-
-    #     if curr_pos >= -AMETHYSTS_POS_LIMIT:
-    #         num = -AMETHYSTS_POS_LIMIT-curr_pos
-    #         orders.append(Order("AMETHYSTS", ask_price, num))
-    #         curr_pos += num
-
-    #     return orders
 
 
     def run(self, state: TradingState):
+
+        print("hi from run_2")
         result = {'STARFRUIT': []}
-        traderData = ""
+        # traderData = ""
         print("hi from run_1")
 
         for key, val in state.position.items():
@@ -261,12 +218,12 @@ class Trader:
             starfruit_lb = self.calc_next_price_starfruit()-1
             starfruit_ub = self.calc_next_price_starfruit()+1
 
-        data_past = jsonpickle.decode(TradingState.traderData)
-        ema_fast = data_past['ema_fast']
-        ema_slow = data_past['ema_slow']
-        macd_line = data_past['macd_line']     
+        # data_past = jsonpickle.decode(TradingState.traderData)
+        # ema_fast = data_past['ema_fast']
+        # ema_slow = data_past['ema_slow']
+        # macd_line = data_past['macd_line']     
            
-        ema_fast, ema_slow, macd_line, signal_line, macd_hist = self.compute_starfruit_macd((best_bid_sf + best_ask_sf)/2, ema_fast, ema_slow, signal_line)
+        ema_fast, ema_slow, macd_line, signal_line, macd_hist = self.compute_starfruit_macd((best_bid_sf + best_ask_sf)/2)
         result["STARFRUIT"] += self.compute_orders_sf(state.order_depths["STARFRUIT"], macd_hist)
 
         # amethysts_lb = 10000
@@ -275,7 +232,7 @@ class Trader:
         # result["AMETHYSTS"] += self.compute_orders_amethysts(state.order_depths["AMETHYSTS"], amethysts_lb, amethysts_ub)
 
         # data_toremember = {'ema_fast': ema_fast, 'ema_slow': ema_slow, 'macd_line': macd_line}
-        # traderData = jsonpickle.encode(data_toremember)
+        traderData = "jsonpickle.encode(data_toremember)"
 
         conversions = 1
         logger.flush(state, result, conversions, traderData)

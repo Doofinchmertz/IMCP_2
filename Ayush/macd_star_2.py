@@ -232,9 +232,8 @@ class Trader:
 
 
     def run(self, state: TradingState):
-        result = {'STARFRUIT': []}
+        result = {'AMETHYSTS': [], 'STARFRUIT': []}
         traderData = ""
-        print("hi from run_1")
 
         for key, val in state.position.items():
             self.position[key] = val

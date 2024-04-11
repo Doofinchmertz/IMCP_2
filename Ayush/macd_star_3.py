@@ -112,7 +112,7 @@ logger = Logger()
 
 class Trader:
     
-    position = {"AMETHYSTS": 0, "STARFRUIT": 0}
+    position = {"STARFRUIT": 0}
     starfruit_cache = []
     starfruit_dim = 3
 
@@ -232,6 +232,8 @@ class Trader:
 
 
     def run(self, state: TradingState):
+
+        print("hi from run_2")
         result = {'STARFRUIT': []}
         traderData = ""
         print("hi from run_1")
