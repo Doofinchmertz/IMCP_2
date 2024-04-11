@@ -115,8 +115,8 @@ class Trader:
     starfruit_dim = 4
 
     def calc_next_price_starfruit(self):
-        coeff = [0.19847666, 0.20319141, 0.25784436, 0.34024443]
-        intercept = 1.2265551526497802
+        coeff = [0.18895127, 0.20771801, 0.26114406, 0.34171985]
+        intercept = 2.3552758852292754
         nxt_price = intercept
         for i, val in enumerate(self.starfruit_cache):
             nxt_price += val * coeff[i]
@@ -140,7 +140,7 @@ class Trader:
         curr_pos = self.position["STARFRUIT"]
 
         for ask, vol in sell_orders:
-            if ((ask <= acc_bid)) and curr_pos < STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]<0) and (ask == acc_bid+1) to the condition
+            if ((ask <= acc_bid) or ((self.position["STARFRUIT"] < 0) and (ask == acc_bid + 1))) and curr_pos < STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]<0) and (ask == acc_bid+1) to the condition
                 order_for = min(-vol, STARFRUIT_POS_LIMIT - curr_pos)
                 curr_pos += order_for
                 assert(order_for >= 0)
@@ -155,7 +155,7 @@ class Trader:
         curr_pos = self.position["STARFRUIT"]
 
         for bid, vol in buy_orders:
-            if ((bid >= acc_ask)) and curr_pos > -STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]>0) and (bid == acc_ask-1) to the condition
+            if ((bid >= acc_ask) or ((self.position["STARFRUIT"] > 0) and (bid == acc_ask - 1))) and curr_pos > -STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]>0) and (bid == acc_ask-1) to the condition
                 order_for = max(-vol, -STARFRUIT_POS_LIMIT-curr_pos)
                 curr_pos += order_for
                 assert(order_for <= 0)
@@ -180,19 +180,19 @@ class Trader:
         undercut_buy = best_bid + 1
         undercut_sell = best_ask - 1
 
-        bid_price = min(undercut_buy, acc_bid + 1)
-        ask_price = max(undercut_sell, acc_ask - 1)
+        bid_price = min(undercut_buy, acc_bid - 1)
+        ask_price = max(undercut_sell, acc_ask + 1)
 
         curr_pos = self.position["AMETHYSTS"]
 
         for ask, vol in sell_orders:
-            if ((ask < acc_bid)) and curr_pos < AMETHYSTS_POS_LIMIT:
+            if ((ask < acc_bid) or ((self.position["AMETHYSTS"] < 0) and (ask == acc_bid))) and curr_pos < AMETHYSTS_POS_LIMIT:
                 order_for = min(-vol, AMETHYSTS_POS_LIMIT - curr_pos)
                 curr_pos += order_for
                 assert(order_for >= 0)
                 orders.append(Order("AMETHYSTS", ask, order_for))
         
-        if curr_pos <= AMETHYSTS_POS_LIMIT:
+        if curr_pos < AMETHYSTS_POS_LIMIT:
             num = AMETHYSTS_POS_LIMIT - curr_pos
             orders.append(Order("AMETHYSTS", bid_price, num))
             curr_pos += num
@@ -200,19 +200,18 @@ class Trader:
         curr_pos = self.position["AMETHYSTS"]
 
         for bid, vol in buy_orders:
-            if ((bid > acc_ask)) and curr_pos > -AMETHYSTS_POS_LIMIT:
+            if ((bid > acc_ask) or ((self.position["AMETHYSTS"] > 0) and (bid == acc_ask))) and curr_pos > -AMETHYSTS_POS_LIMIT:
                 order_for = max(-vol, -AMETHYSTS_POS_LIMIT-curr_pos)
                 curr_pos += order_for
                 assert(order_for <= 0)
                 orders.append(Order("AMETHYSTS", bid, order_for))
 
-        if curr_pos >= -AMETHYSTS_POS_LIMIT:
+        if curr_pos > -AMETHYSTS_POS_LIMIT:
             num = -AMETHYSTS_POS_LIMIT-curr_pos
             orders.append(Order("AMETHYSTS", ask_price, num))
             curr_pos += num
 
         return orders
-
 
     def run(self, state: TradingState):
         result = {'AMETHYSTS': [], 'STARFRUIT': []}
@@ -237,8 +236,11 @@ class Trader:
         starfruit_ub = 10000
 
         if len(self.starfruit_cache) == self.starfruit_dim:
-            starfruit_lb = self.calc_next_price_starfruit()-1
-            starfruit_ub = self.calc_next_price_starfruit()+1
+            next_price = self.calc_next_price_starfruit()
+            starfruit_lb = next_price-1
+            starfruit_ub = next_price+1
+            traderData = f"Next price: {next_price}"
+        
 
         result["STARFRUIT"] += self.compute_orders_sf(state.order_depths["STARFRUIT"], starfruit_lb, starfruit_ub)
 

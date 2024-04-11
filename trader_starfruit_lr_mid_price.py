@@ -115,8 +115,8 @@ class Trader:
     starfruit_dim = 4
 
     def calc_next_price_starfruit(self):
-        coeff = [0.19847666, 0.20319141, 0.25784436, 0.34024443]
-        intercept = 1.2265551526497802
+        coeff = [0.18895127, 0.20771801, 0.26114406, 0.34171985]
+        intercept = 2.3552758852292754
         nxt_price = intercept
         for i, val in enumerate(self.starfruit_cache):
             nxt_price += val * coeff[i]
@@ -140,7 +140,7 @@ class Trader:
         curr_pos = self.position["STARFRUIT"]
 
         for ask, vol in sell_orders:
-            if ((ask <= acc_bid)) and curr_pos < STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]<0) and (ask == acc_bid+1) to the condition
+            if ((ask <= acc_bid) or ((self.position["STARFRUIT"] < 0) and (ask == acc_bid + 1))) and curr_pos < STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]<0) and (ask == acc_bid+1) to the condition
                 order_for = min(-vol, STARFRUIT_POS_LIMIT - curr_pos)
                 curr_pos += order_for
                 assert(order_for >= 0)
@@ -155,7 +155,7 @@ class Trader:
         curr_pos = self.position["STARFRUIT"]
 
         for bid, vol in buy_orders:
-            if ((bid >= acc_ask)) and curr_pos > -STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]>0) and (bid == acc_ask-1) to the condition
+            if ((bid >= acc_ask) or ((self.position["STARFRUIT"] > 0) and (bid == acc_ask - 1))) and curr_pos > -STARFRUIT_POS_LIMIT: ## Try adding (self.position[product]>0) and (bid == acc_ask-1) to the condition
                 order_for = max(-vol, -STARFRUIT_POS_LIMIT-curr_pos)
                 curr_pos += order_for
                 assert(order_for <= 0)
