@@ -192,7 +192,7 @@ class Trader:
                 assert(order_for >= 0)
                 orders.append(Order("AMETHYSTS", ask, order_for))
         
-        if curr_pos <= AMETHYSTS_POS_LIMIT:
+        if curr_pos < AMETHYSTS_POS_LIMIT:
             num = AMETHYSTS_POS_LIMIT - curr_pos
             orders.append(Order("AMETHYSTS", bid_price, num))
             curr_pos += num
@@ -206,7 +206,7 @@ class Trader:
                 assert(order_for <= 0)
                 orders.append(Order("AMETHYSTS", bid, order_for))
 
-        if curr_pos >= -AMETHYSTS_POS_LIMIT:
+        if curr_pos > -AMETHYSTS_POS_LIMIT:
             num = -AMETHYSTS_POS_LIMIT-curr_pos
             orders.append(Order("AMETHYSTS", ask_price, num))
             curr_pos += num
