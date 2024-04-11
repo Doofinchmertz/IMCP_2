@@ -118,33 +118,41 @@ class Trader:
         traderData = ""
         POSITION_LIMIT = 20
         for product in state.order_depths:
-
-            if product == "AMETHYSTS":
+            if product == "STARFRUIT":
                 curr_position = 0
                 if(product in state.position):
                     curr_position = state.position[product]
                 order_depth: OrderDepth = state.order_depths[product]
                 orders: List[Order] = []
-                acceptable_price = 10000
+                best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
+                best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
+
+                middle_price = (best_ask + best_bid) / 2
+                if(state.traderData == ""):
+                    prev_ema_fast = 0
+                    prev_ema_slow = 0
+                else:
+                    prevTraderData = json.loads(state.traderData)
+                    prev_ema_fast = float(prevTraderData["ema_fast"])
+                    prev_ema_slow = float(prevTraderData["ema_slow"])
+
+                alpha_fast = 2 / (1 + 10)
+                alpha_slow = 2 / (1 + 50)
+                ema_fast = alpha_fast * middle_price + (1 - alpha_fast) * prev_ema_fast
+                ema_slow = alpha_slow * middle_price + (1 - alpha_slow) * prev_ema_slow
+                acceptable_price = ema_fast
+
+                traderData = json.dumps({"ema_fast": ema_fast, "ema_slow": ema_slow})
+
                 if len(order_depth.sell_orders) != 0:
                     best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
-                    if int(best_ask) < acceptable_price:
-                        # buy_amount = -best_ask_amount
-                        # if curr_position + buy_amount > POSITION_LIMIT:
-                        #     buy_amount = POSITION_LIMIT - curr_position
-                        buy_amount = POSITION_LIMIT - curr_position
-                        orders.append(Order(product, best_ask, buy_amount))
+                    if int(best_ask) < acceptable_price and ema_fast - ema_slow > 0:
+                        orders.append(Order(product, best_ask, -best_ask_amount))
                 if len(order_depth.buy_orders) != 0:
                     best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
-                    if int(best_bid) > acceptable_price:
-                        # sell_amount = -best_bid_amount
-                        # if curr_position + sell_amount < -POSITION_LIMIT:
-                        #     sell_amount = -POSITION_LIMIT - curr_position
-                        sell_amount = -POSITION_LIMIT - curr_position
-                        orders.append(Order(product, best_bid, sell_amount))
-                
+                    if int(best_bid) > acceptable_price and ema_fast - ema_slow < 0:
+                        orders.append(Order(product, best_bid, -best_bid_amount))
                 result[product] = orders
-    
     
         # traderData = str((best_bid + best_ask)//2) # String value holding Trader state data required. It will be delivered as TradingState.traderData on next execution.
         

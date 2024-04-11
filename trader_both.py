@@ -144,10 +144,40 @@ class Trader:
                         orders.append(Order(product, best_bid, sell_amount))
                 
                 result[product] = orders
+
+            if product == "STARFRUIT":
+                curr_position = 0
+                if(product in state.position):
+                    curr_position = state.position[product]
+                order_depth: OrderDepth = state.order_depths[product]
+                orders: List[Order] = []
+                best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
+                best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
+
+                middle_price = (best_ask + best_bid) / 2
+                if(state.traderData == ""):
+                    prev_ema = 0
+                else:
+                    prev_ema = float(state.traderData)
+                alpha = 2 / (1 + 10)
+                ema = alpha * middle_price + (1 - alpha) * prev_ema
+                acceptable_price = ema
+                traderData = str(ema)
+
+                if len(order_depth.sell_orders) != 0:
+                    best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
+                    if int(best_ask) < acceptable_price:
+                        orders.append(Order(product, best_ask, -best_ask_amount))
+                if len(order_depth.buy_orders) != 0:
+                    best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
+                    if int(best_bid) > acceptable_price:
+                        orders.append(Order(product, best_bid, -best_bid_amount))
+                result[product] = orders
+    
     
     
         # traderData = str((best_bid + best_ask)//2) # String value holding Trader state data required. It will be delivered as TradingState.traderData on next execution.
         
         conversions = 1
-        logger.flush(state, result, conversions, traderData)
+        # logger.flush(state, result, conversions, traderData)
         return result, conversions, traderData

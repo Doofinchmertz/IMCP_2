@@ -1,16 +1,6 @@
 import pandas as pd
 import talib
 
-import plotly.graph_objects as go
+df = pd.read_csv('round-1-island-data-bottle/prices_round_1_day_-1.csv', sep=';')
 
-df = pd.read_csv('round-1-island-data-bottle/prices_round_1_day_-2.csv', sep=';')
-df = df[df['product'] == 'STARFRUIT']
-
-df['ema'] = talib.EMA(df['mid_price'], timeperiod=10)
-
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=df.index, y=df['ask_price_1'], name='Best Ask Price 1'))
-fig.add_trace(go.Scatter(x=df.index, y=df['bid_price_1'], name='Best Bid Price 1'))
-fig.add_trace(go.Scatter(x=df.index, y=df['ema'], name='EMA of Middle Price'))
-
-fig.show()
+df.drop(['day', 'bid_price_2', 'bid_volume_2', 'bid_price_3', 'bid_volume_3', 'ask_price_2', 'ask_volume_2', 'ask_price_3', 'ask_volume_3'], axis=1, inplace=True)

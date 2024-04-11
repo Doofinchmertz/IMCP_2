@@ -118,34 +118,32 @@ class Trader:
         traderData = ""
         POSITION_LIMIT = 20
         for product in state.order_depths:
+            if product == "STARFRUIT":
 
-            if product == "AMETHYSTS":
                 curr_position = 0
                 if(product in state.position):
                     curr_position = state.position[product]
                 order_depth: OrderDepth = state.order_depths[product]
                 orders: List[Order] = []
-                acceptable_price = 10000
-                if len(order_depth.sell_orders) != 0:
-                    best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
-                    if int(best_ask) < acceptable_price:
-                        # buy_amount = -best_ask_amount
-                        # if curr_position + buy_amount > POSITION_LIMIT:
-                        #     buy_amount = POSITION_LIMIT - curr_position
-                        buy_amount = POSITION_LIMIT - curr_position
-                        orders.append(Order(product, best_ask, buy_amount))
-                if len(order_depth.buy_orders) != 0:
-                    best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
-                    if int(best_bid) > acceptable_price:
-                        # sell_amount = -best_bid_amount
-                        # if curr_position + sell_amount < -POSITION_LIMIT:
-                        #     sell_amount = -POSITION_LIMIT - curr_position
-                        sell_amount = -POSITION_LIMIT - curr_position
-                        orders.append(Order(product, best_bid, sell_amount))
+                best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
+                best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
+
+                traderData = json.dumps({"prev_best_ask": best_ask, "prev_best_bid": best_bid})
+
+                if(state.traderData == ""):
+                    continue
+                
+                prev_bid_ask = json.loads(state.traderData)
+                prev_best_ask = prev_bid_ask["prev_best_ask"]
+                prev_best_bid = prev_bid_ask["prev_best_bid"]
+
+                if(best_bid > prev_best_bid and ((best_ask - prev_best_ask) != 0 and (best_bid - prev_best_bid)/(prev_best_ask - best_ask) >=5 )):
+                    orders.append(Order(product, best_ask, -best_ask_amount))
+                
+                if(best_ask < prev_best_ask and ((prev_best_bid - best_bid) != 0 and (prev_best_ask - best_ask)/(best_bid - prev_best_bid) >=5 )):
+                    orders.append(Order(product, best_bid, -best_bid_amount))
                 
                 result[product] = orders
-    
-    
         # traderData = str((best_bid + best_ask)//2) # String value holding Trader state data required. It will be delivered as TradingState.traderData on next execution.
         
         conversions = 1

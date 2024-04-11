@@ -117,34 +117,91 @@ class Trader:
         result = {}
         traderData = ""
         POSITION_LIMIT = 20
-        for product in state.order_depths:
+        traderDataDict = {"prev_ema":0}
+        prevDataDict = {"prev_ema":0}
 
-            if product == "AMETHYSTS":
+        traderDataDict["ask_vwap_-1"] = 0
+        traderDataDict["ask_vwap_-2"] = 0
+        traderDataDict["ask_vwap_-3"] = 0
+        prevDataDict["ask_vwap_-1"] = 0
+        prevDataDict["ask_vwap_-2"] = 0
+        prevDataDict["ask_vwap_-3"] = 0
+
+        traderDataDict["bid_vwap_-1"] = 0
+        traderDataDict["bid_vwap_-2"] = 0
+        traderDataDict["bid_vwap_-1"] = 0
+        prevDataDict["bid_vwap_-1"] = 0
+        prevDataDict["bid_vwap_-2"] = 0
+        prevDataDict["bid_vwap_-3"] = 0
+
+        for product in state.order_depths:
+            if product == "STARFRUIT":
+                # coeff = [0.71039057, 0.1848555, 0.10453474, 1.1281731918970763]
+                # coeff = [0.33784719, 0.26181147, 0.22293829, 0.17502343, 12.01585829020405]
+                # coeff = [0.33922834, 0.26003937, 0.21324316, 0.18708019, 2.0601760119307073]
+                # coeff = [0.29828608, 0.21728841, 0.16708144, 0.1040832, 0.11671686, 0.09471415, 9.239640558342217] 
+                # coeff = [ 0.442155 , 0.12808201, -0.01124977, 0.29783109, 0.0825154, 0.06035712, 1.9887987381416679]
+                coeff =  [ 0.44125852,  0.12375015,  -0.02300774,  0.0808372,   0.29703273,  0.08032768, 0.04989463, -0.05028714, 1.8456174269604162]
                 curr_position = 0
                 if(product in state.position):
                     curr_position = state.position[product]
                 order_depth: OrderDepth = state.order_depths[product]
                 orders: List[Order] = []
-                acceptable_price = 10000
+                best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
+                best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
+
+                if (state.traderData != ""):
+                    prevDataDict = json.loads(state.traderData)
+
+                buy_orders = order_depth.buy_orders.items()
+                sell_orders = order_depth.sell_orders.items()
+
+                bid_vwap_0 = sum([float(price) * float(amount) for price, amount in buy_orders]) / sum([float(amount) for price, amount in buy_orders])
+                bid_vwap_1 = prevDataDict["bid_vwap_-1"]
+                bid_vwap_2 = prevDataDict["bid_vwap_-2"]
+                bid_vwap_3 = prevDataDict["bid_vwap_-3"]
+
+                ask_vwap_0 = sum([float(price) * float(amount) for price, amount in sell_orders]) / sum([float(amount) for price, amount in sell_orders])
+                ask_vwap_1 = prevDataDict["ask_vwap_-1"]
+                ask_vwap_2 = prevDataDict["ask_vwap_-2"]
+                ask_vwap_3 = prevDataDict["ask_vwap_-3"]
+
+                traderDataDict["bid_vwap_-1"] = bid_vwap_0
+                traderDataDict["bid_vwap_-2"] = bid_vwap_1
+                traderDataDict["bid_vwap_-3"] = bid_vwap_2
+                traderDataDict["ask_vwap_-1"] = ask_vwap_0
+                traderDataDict["ask_vwap_-2"] = ask_vwap_1
+                traderDataDict["ask_vwap_-3"] = ask_vwap_2
+
+                prev_ema = prevDataDict["prev_ema"]
+                middle_price = (best_ask + best_bid) / 2
+                alpha = 2 / (1 + 10)
+                ema = alpha * middle_price + (1 - alpha) * prev_ema
+                traderDataDict["prev_ema"] = ema
+
+                traderData = json.dumps(traderDataDict)
+                if state.timestamp < 400:
+                    continue
+
+                predicted_mid_price = coeff[0] * bid_vwap_0 + coeff[1] * bid_vwap_1 + coeff[2] * bid_vwap_2 + coeff[3] * bid_vwap_3 + coeff[4] * ask_vwap_0 + coeff[5] * ask_vwap_1 + coeff[6] * ask_vwap_2 + coeff[7] * ask_vwap_3 + coeff[8]
+                
+                lamda = 1
+                acceptable_price = predicted_mid_price*lamda + ema*(1-lamda)
+
                 if len(order_depth.sell_orders) != 0:
                     best_ask, best_ask_amount = list(order_depth.sell_orders.items())[0]
                     if int(best_ask) < acceptable_price:
-                        # buy_amount = -best_ask_amount
-                        # if curr_position + buy_amount > POSITION_LIMIT:
-                        #     buy_amount = POSITION_LIMIT - curr_position
                         buy_amount = POSITION_LIMIT - curr_position
+                        # buy_amount = -best_ask_amount
                         orders.append(Order(product, best_ask, buy_amount))
                 if len(order_depth.buy_orders) != 0:
                     best_bid, best_bid_amount = list(order_depth.buy_orders.items())[0]
                     if int(best_bid) > acceptable_price:
-                        # sell_amount = -best_bid_amount
-                        # if curr_position + sell_amount < -POSITION_LIMIT:
-                        #     sell_amount = -POSITION_LIMIT - curr_position
                         sell_amount = -POSITION_LIMIT - curr_position
+                        # sell_amount = -best_bid_amount
                         orders.append(Order(product, best_bid, sell_amount))
-                
+
                 result[product] = orders
-    
     
         # traderData = str((best_bid + best_ask)//2) # String value holding Trader state data required. It will be delivered as TradingState.traderData on next execution.
         
