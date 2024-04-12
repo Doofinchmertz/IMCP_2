@@ -175,7 +175,7 @@ class Trader:
             if curr_pos < STARFRUIT_POS_LIMIT:
                 ask, vol = sell_orders[0]
                 # print(curr_pos, STARFRUIT_POS_LIMIT, vol)
-                num = min(-vol - 1, STARFRUIT_POS_LIMIT - curr_pos)
+                num = min(STARFRUIT_POS_LIMIT - curr_pos)
                 print(num, "num")
                 orders.append(Order("STARFRUIT", bid_price, num))
                 curr_pos += num
@@ -187,7 +187,7 @@ class Trader:
         if macd_hist > 0.01:
             if curr_pos > -STARFRUIT_POS_LIMIT:
                 bid, vol = buy_orders[0]
-                num = max(-vol + 1, -STARFRUIT_POS_LIMIT - curr_pos)
+                num = max(-STARFRUIT_POS_LIMIT - curr_pos)
                 orders.append(Order("STARFRUIT", ask_price, num))
                 curr_pos += num
                 print("bech bhenchod")
