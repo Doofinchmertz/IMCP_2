@@ -174,7 +174,7 @@ class Trader:
         best_bid, best_bid_amount = buy_orders[0]
 
         undercut_buy = best_bid + 1
-        undercut_sell = best_ask - 3
+        undercut_sell = best_ask - 1
 
         # bid_price = min(undercut_buy, acc_bid - 1)
         # ask_price = max(undercut_sell, acc_ask + 1)
@@ -199,13 +199,18 @@ class Trader:
             if ((bid > undercut_sell) and curr_pos > -ORCHIDS_POS_LIMIT):
                 order_for = max(-vol, -ORCHIDS_POS_LIMIT-curr_pos)
                 curr_pos += order_for
-                assert(order_for <= 0)
+                assert(order_for >= 0)
                 orders.append(Order("ORCHIDS", bid, order_for))
 
         if curr_pos > -ORCHIDS_POS_LIMIT:
-            num = -ORCHIDS_POS_LIMIT-curr_pos
+            num = -ORCHIDS_POS_LIMIT-curr_pos + 10
             orders.append(Order("ORCHIDS", undercut_sell, num))
             curr_pos += num
+
+        #zabardasti last layer clear kardo
+        amt = max(-10, best_bid_amount)
+        if curr_pos == 0:
+            orders.append(Order("ORCHIDS", best_bid, amt))
 
         return orders
 

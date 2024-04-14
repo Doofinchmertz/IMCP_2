@@ -174,27 +174,28 @@ class Trader:
         best_bid, best_bid_amount = buy_orders[0]
 
         undercut_buy = best_bid + 1
-        undercut_sell = best_ask - 3
+        undercut_sell = best_ask - 1
 
         # bid_price = min(undercut_buy, acc_bid - 1)
         # ask_price = max(undercut_sell, acc_ask + 1)
 
         curr_pos = self.position["ORCHIDS"]
 
-        # for ask, vol in sell_orders:
-        #     if ((ask <= undercut_buy)  and curr_pos < ORCHIDS_POS_LIMIT):
-        #         order_for = min(-vol, ORCHIDS_POS_LIMIT - curr_pos)
-        #         curr_pos += order_for
-        #         assert(order_for >= 0)
-        #         orders.append(Order("ORCHIDS", ask, order_for))
+        for ask, vol in sell_orders:
+            if ((ask <= undercut_buy)  and curr_pos < ORCHIDS_POS_LIMIT):
+                order_for = min(-vol, ORCHIDS_POS_LIMIT - curr_pos)
+                curr_pos += order_for
+                assert(order_for >= 0)
+                orders.append(Order("ORCHIDS", ask, order_for))
         
-        # if curr_pos < ORCHIDS_POS_LIMIT:
-        #     num = ORCHIDS_POS_LIMIT - curr_pos
-        #     orders.append(Order("ORCHIDS", undercut_buy, num))
-        #     curr_pos += num
+        if curr_pos < ORCHIDS_POS_LIMIT:
+            num = ORCHIDS_POS_LIMIT - curr_pos
+            orders.append(Order("ORCHIDS", undercut_buy, num))
+            curr_pos += num
         
         curr_pos = self.position["ORCHIDS"]
 
+        #
         for bid, vol in buy_orders:
             if ((bid > undercut_sell) and curr_pos > -ORCHIDS_POS_LIMIT):
                 order_for = max(-vol, -ORCHIDS_POS_LIMIT-curr_pos)
@@ -202,10 +203,20 @@ class Trader:
                 assert(order_for <= 0)
                 orders.append(Order("ORCHIDS", bid, order_for))
 
+        #zabardasti last layer clear kardo
+        amt = min(10, best_bid_amount)
+        if curr_pos == 0:
+            orders.append(Order("ORCHIDS", best_bid, -amt))
+            curr_pos += -amt
+
         if curr_pos > -ORCHIDS_POS_LIMIT:
             num = -ORCHIDS_POS_LIMIT-curr_pos
             orders.append(Order("ORCHIDS", undercut_sell, num))
             curr_pos += num
+
+        # amt = max(-10, best_bid_amount)
+        # if curr_pos == 90:
+        #     orders.append(Order("ORCHIDS", best_bid, amt))
 
         return orders
 
@@ -275,7 +286,7 @@ class Trader:
             conversions = min(5, -curr_pos)
         
         curr_pos = self.position["ORCHIDS"]
-        if undercut_sell < state.observations.conversionObservations["ORCHIDS"].bidPrice - state.observations.conversionObservations["ORCHIDS"].exportTariff - state.observations.conversionObservations["ORCHIDS"].transportFees:
+        if undercut_sell < state.observations.conversionObservations["ORCHIDS"].bidPrice - state.observations.conversionObservations["ORCHIDS"].exportTariff - state.observations.conversionObservations["ORCHIDS"].transportFees -0.5:
             # orders.append(Order("ORCHIDS", best_bid, -best_bid_amount))
             conversions = max(-5, -curr_pos)
             
