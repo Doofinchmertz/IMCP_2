@@ -200,7 +200,12 @@ class Trader:
             for price in range(int(ducks_price_sell) + 2, int(undercut_sell) + 1):
                 orders.append(Order("ORCHIDS", price, volume_bins[i]))
                 i+=1
-            
+        
+        if undercut_buy < ducks_price_sell:
+            vol_bin = int(100 / (ducks_price_sell - undercut_buy))
+            for price in range(int(undercut_buy), int(ducks_price_sell)+1):
+                orders.append(Order("ORCHIDS", price, vol_bin))
+
         curr_pos = self.position["ORCHIDS"]
         ## for orders with value, duck - 1, to undercut_buy
         num_buy_bins = int(ducks_price_buy) - int(undercut_buy)

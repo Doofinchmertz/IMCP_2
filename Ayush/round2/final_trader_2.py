@@ -237,7 +237,7 @@ class Trader:
 
             ## normalise the weights:
             sum_weights = sum(weights_bin)
-            volume_bins = [int((x/sum_weights)*(-ORCHIDS_POS_LIMIT - curr_pos + 10)) for x in weights_bin]
+            volume_bins = [int((x/sum_weights)*(-ORCHIDS_POS_LIMIT - curr_pos)) for x in weights_bin]
 
             # num_of_orders = undercut_sell - ducks_price_sell - 1
             # vol_of_orders = int((100 - curr_pos)/num_of_orders)
@@ -246,11 +246,16 @@ class Trader:
                 orders.append(Order("ORCHIDS", price, volume_bins[i]))
                 i+=1
             #appending 10 values for a lower timestamp
-            orders.append(Order("ORCHIDS", int(ducks_price_sell) + 1, -10))
+            # orders.append(Order("ORCHIDS", int(ducks_price_sell) + 1, -10))
             
         curr_pos = self.position["ORCHIDS"]
 
-        
+        if undercut_buy < ducks_price_sell:
+            vol_bin = int(100 / (ducks_price_sell - undercut_buy))
+            for price in range(int(undercut_buy), int(ducks_price_sell)+1):
+                orders.append(Order("ORCHIDS", price, vol_bin))
+
+
         ## for orders with value, duck - 1, to undercut_buy
         num_buy_bins = int(ducks_price_buy) - int(undercut_buy)
         if num_buy_bins > 0:
