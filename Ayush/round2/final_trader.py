@@ -204,9 +204,18 @@ class Trader:
                 i += 1
             
         
+        # check fo rarbitrage between buy and sell levels in the market
+        if self.position < 0:
+            if ducks_price > best_bid:
+                ## appending orders for mm 
+                for price in range(int(undercut_buy), int(ducks_price)):
+                    orders.append(Order("ORCHIDS", price, 10))
+
+
+
+        # Check for arbitrage between long positions
+
         
-
-
 
         # curr_pos = self.position["ORCHIDS"]
         # #
