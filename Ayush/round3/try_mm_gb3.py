@@ -361,7 +361,8 @@ class Trader:
         #         vol_sell[p] += -vol 
         #         if vol_sell[p] >= self.POSITION_LIMIT[p]/10:
         #             break
-
+        print("lengbth of mid_price", len(mid_price))
+        print("type", type(mid_price))
         res_buy = mid_price[3] - mid_price[0]*4 - mid_price[1]*6 - mid_price[2] - 379
         res_sell = mid_price[3] - mid_price[0]*4 - mid_price[1]*6 - mid_price[2] - 379 
 
