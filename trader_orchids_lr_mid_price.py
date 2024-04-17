@@ -113,8 +113,11 @@ class Trader:
     position = {"AMETHYSTS": 0, "STARFRUIT": 0, "ORCHIDS": 0}
     starfruit_cache = []
     starfruit_dim = 4
+
+    orchids_cache = []
+    sunlights_cache = []
     humidity_cache = []
-    humidity_dim = 10
+    orchids_dim = 3
 
     def calc_next_price_starfruit(self):
         coeff = [0.18895127, 0.20771801, 0.26114406, 0.34171985]
@@ -133,6 +136,12 @@ class Trader:
         best_ask, best_ask_amount = sell_orders[0]
         best_bid, best_bid_amount = buy_orders[0]
 
+        undercut_buy = best_bid + 1
+        undercut_sell = best_ask - 1
+
+        bid_price = min(undercut_buy, acc_bid)
+        ask_price = max(undercut_sell, acc_ask)
+
         curr_pos = self.position["STARFRUIT"]
 
         for ask, vol in sell_orders:
@@ -142,11 +151,10 @@ class Trader:
                 assert(order_for >= 0)
                 orders.append(Order("STARFRUIT", ask, order_for))
 
-        if best_bid + 1 <= acc_bid:
-            if curr_pos < STARFRUIT_POS_LIMIT:
-                num = STARFRUIT_POS_LIMIT - curr_pos
-                orders.append(Order("STARFRUIT", best_bid + 1, num))
-                curr_pos += num
+        if curr_pos < STARFRUIT_POS_LIMIT:
+            num = STARFRUIT_POS_LIMIT - curr_pos
+            orders.append(Order("STARFRUIT", bid_price, num))
+            curr_pos += num
 
 
         curr_pos = self.position["STARFRUIT"]
@@ -158,101 +166,119 @@ class Trader:
                 assert(order_for <= 0)
                 orders.append(Order("STARFRUIT", bid, order_for))
 
-        if best_ask - 1 >= acc_ask:
-            if curr_pos > -STARFRUIT_POS_LIMIT:
-                num = -STARFRUIT_POS_LIMIT-curr_pos
-                orders.append(Order("STARFRUIT", best_ask - 1, num))
-                curr_pos += num
+        if curr_pos > -STARFRUIT_POS_LIMIT:
+            num = -STARFRUIT_POS_LIMIT-curr_pos
+            orders.append(Order("STARFRUIT", ask_price, num))
+            curr_pos += num
 
         return orders
 
-    def compute_orders_amethysts(self, order_depth, acc_bid, acc_ask):
-        AMETHYSTS_POS_LIMIT = 20
+    def calc_next_price_orchids(self):
+        coeff = [-3.01573128e+00,  6.05763426e+00, -3.04186888e+00, -1.47180306e+03, 2.93898496e+03, -1.46717968e+03,  1.20520562e-03,  1.38457398e-02, 9.82786093e-01]
+        intercept = 2.3046044945308495
+        nxt_price = intercept
+        for i, val in enumerate(self.sunlights_cache):
+            nxt_price += val * coeff[i]
+        for i, val in enumerate(self.humidity_cache):
+            nxt_price += val * coeff[i+3]
+        for i, val in enumerate(self.orchids_cache):
+            nxt_price += val * coeff[i+6]
+        return int(round(nxt_price))
+
+    def compute_orders_orchids(self, order_depth, acc_bid, acc_ask):
+        ORCHIDS_POS_LIMIT = 100
         orders: list[Order] = []
 
         sell_orders = list(order_depth.sell_orders.items())
         buy_orders = list(order_depth.buy_orders.items())
         best_ask, best_ask_amount = sell_orders[0]
         best_bid, best_bid_amount = buy_orders[0]
+    
+        curr_pos = self.position["ORCHIDS"]
+        num_sell_bins = int(best_ask) - int(acc_ask)
+        if(num_sell_bins > 0):
+            weights_bin = [0] * num_sell_bins
+            weights_bin[0] = 1
 
-        undercut_buy = best_bid + 1
-        undercut_sell = best_ask - 1
+            for i in range(1, num_sell_bins):
+                weights_bin[i] = 0.4*weights_bin[i-1]
 
-        bid_price = min(undercut_buy, acc_bid - 1)
-        ask_price = max(undercut_sell, acc_ask + 1)
+            ## normalise the weights:
+            sum_weights = sum(weights_bin)
+            volume_bins = [int((x/sum_weights)*(-ORCHIDS_POS_LIMIT - curr_pos)) for x in weights_bin]
 
-        curr_pos = self.position["AMETHYSTS"]
+            i = 0
+            for price in range(int(acc_ask), int(best_ask)):
+                orders.append(Order("ORCHIDS", price, volume_bins[i]))
+                i += 1
 
-        for ask, vol in sell_orders:
-            if ((ask < acc_bid) or ((self.position["AMETHYSTS"] < 0) and (ask == acc_bid))) and curr_pos < AMETHYSTS_POS_LIMIT:
-                order_for = min(-vol, AMETHYSTS_POS_LIMIT - curr_pos)
-                curr_pos += order_for
-                assert(order_for >= 0)
-                orders.append(Order("AMETHYSTS", ask, order_for))
-        
-        if curr_pos < AMETHYSTS_POS_LIMIT:
-            num = AMETHYSTS_POS_LIMIT - curr_pos
-            orders.append(Order("AMETHYSTS", bid_price, num))
-            curr_pos += num
-        
-        curr_pos = self.position["AMETHYSTS"]
+        num_buy_bins = int(acc_bid) - int(best_bid)
+        if(num_buy_bins > 0):
+            weights_bin = [0] * num_buy_bins
+            weights_bin[0] = 1
 
-        for bid, vol in buy_orders:
-            if ((bid > acc_ask) or ((self.position["AMETHYSTS"] > 0) and (bid == acc_ask))) and curr_pos > -AMETHYSTS_POS_LIMIT:
-                order_for = max(-vol, -AMETHYSTS_POS_LIMIT-curr_pos)
-                curr_pos += order_for
-                assert(order_for <= 0)
-                orders.append(Order("AMETHYSTS", bid, order_for))
+            for i in range(1, num_buy_bins):
+                weights_bin[i] = 0.4*weights_bin[i-1]
 
-        if curr_pos > -AMETHYSTS_POS_LIMIT:
-            num = -AMETHYSTS_POS_LIMIT-curr_pos
-            orders.append(Order("AMETHYSTS", ask_price, num))
-            curr_pos += num
+            ## normalise the weights:
+            sum_weights = sum(weights_bin)
+            volume_bins = [int((x/sum_weights)*(ORCHIDS_POS_LIMIT - curr_pos)) for x in weights_bin]
+
+            i = 0
+            for price in range(int(acc_bid), int(best_bid), -1):
+                orders.append(Order("ORCHIDS", price, volume_bins[i]))
+                i += 1
+
 
         return orders
-
-    def compute_orders_orchids(self, order_depth):
-        orders: list[Order] = []
-
-        buy_orders = list(order_depth.buy_orders.items())
-        sell_orders = list(order_depth.sell_orders.items())
-        best_ask, best_ask_amount = sell_orders[0]
-        best_bid, best_bid_amount = buy_orders[0]
-
-        orders.append(Order("ORCHIDS", best_bid, -best_bid_amount))
-
-        return orders
-
-
+    
     def run(self, state: TradingState):
         result = {'AMETHYSTS': [], 'STARFRUIT': [], 'ORCHIDS': []}
         traderData = ""
-        conversions = 0
 
         for key, val in state.position.items():
             self.position[key] = val
 
-        order_depths = state.order_depths
-        buy_orders = list(order_depths["ORCHIDS"].buy_orders.items())
-        sell_orders = list(order_depths["ORCHIDS"].sell_orders.items())
-        best_ask, best_ask_amount = sell_orders[0]
-        best_bid, best_bid_amount = buy_orders[0]
-        ORCHIDS_POS_LIMIT = 100
-
-        observation = state.observations.conversionObservations["ORCHIDS"]
-        sunlight, humidity = observation.sunlight, observation.humidity
-        self.humidity_cache.append(humidity)
-        if len(self.humidity_cache) > self.humidity_dim:
-            self.humidity_cache.pop(0)
+        if len(self.starfruit_cache) == self.starfruit_dim:
+            self.starfruit_cache.pop(0)
         
-        ## check if all values in humidity cache are out of the range 60-80
-        curr_pos = self.position["ORCHIDS"]
-        if all(humidity < 55 or humidity > 85 for humidity in self.humidity_cache):
-            result['ORCHIDS'] = [Order("ORCHIDS", best_bid, max(-ORCHIDS_POS_LIMIT - curr_pos, -best_bid_amount))]
+        ## buy_orders.items() = list of tuples of bids in decreasing order
+        ## sell_orders.items() = list of tuples of asks in increasing order
 
-        if (all(humidity >= 60 and humidity <= 80 for humidity in self.humidity_cache)):
-            if (curr_pos < 0):
-                conversions = min(-curr_pos, 10)
+        # best_bid_sf, best_bid_amount_sf = list(state.order_depths["STARFRUIT"].buy_orders.items())[0]
+        # best_ask_sf, best_ask_amount_sf = list(state.order_depths["STARFRUIT"].sell_orders.items())[0]
 
+        # self.starfruit_cache.append((best_bid_sf + best_ask_sf)/2)
+
+        # INF = 1e9
+        # starfruit_lb = 1
+        # starfruit_ub = 10000
+
+        # if len(self.starfruit_cache) == self.starfruit_dim:
+        #     starfruit_lb = self.calc_next_price_starfruit()-1
+        #     starfruit_ub = self.calc_next_price_starfruit()+1
+
+        # result["STARFRUIT"] += self.compute_orders_sf(state.order_depths["STARFRUIT"], starfruit_lb, starfruit_ub)
+
+        best_bid_orchids, best_bid_amount_orchids = list(state.order_depths["ORCHIDS"].buy_orders.items())[0]
+        best_ask_orchids, best_ask_amount_orchids = list(state.order_depths["ORCHIDS"].sell_orders.items())[0]
+
+        observations = state.observations.conversionObservations["ORCHIDS"]
+        self.sunlights_cache.append(observations.sunlight)
+        self.humidity_cache.append(observations.humidity)
+        self.orchids_cache.append((best_bid_orchids + best_ask_orchids)/2)
+        orchids_lb = 1
+        orchids_ub = 10000
+
+        if len(self.orchids_cache) >= self.orchids_dim:
+            self.orchids_cache.pop(0)
+            self.sunlights_cache.pop(0)
+            self.humidity_cache.pop(0)
+            nxt_price = self.calc_next_price_orchids()
+            orchids_lb = nxt_price-1
+            orchids_ub = nxt_price+1
+            result["ORCHIDS"] += self.compute_orders_orchids(state.order_depths["ORCHIDS"], orchids_lb, orchids_ub)
+
+        conversions = 0
         logger.flush(state, result, conversions, traderData)
         return result, conversions, traderData

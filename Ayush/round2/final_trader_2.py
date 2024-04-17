@@ -221,9 +221,6 @@ class Trader:
         undercut_buy = best_bid + 1
         undercut_sell = best_ask - 1
 
-        # bid_price = min(undercut_buy, acc_bid - 1)
-        # ask_price = max(undercut_sell, acc_ask + 1)
-
         curr_pos = self.position["ORCHIDS"]
 
         ## for orders with value, duck + 2, to undercut_sell
@@ -239,23 +236,17 @@ class Trader:
             sum_weights = sum(weights_bin)
             volume_bins = [int((x/sum_weights)*(-ORCHIDS_POS_LIMIT - curr_pos)) for x in weights_bin]
 
-            # num_of_orders = undercut_sell - ducks_price_sell - 1
-            # vol_of_orders = int((100 - curr_pos)/num_of_orders)
             i = 0
             for price in range(int(ducks_price_sell) + 2, int(undercut_sell) + 1):
                 orders.append(Order("ORCHIDS", price, volume_bins[i]))
                 i+=1
-            #appending 10 values for a lower timestamp
-            # orders.append(Order("ORCHIDS", int(ducks_price_sell) + 1, -10))
-            
+
+            if undercut_buy < ducks_price_sell:
+                vol_bin = int(ORCHIDS_POS_LIMIT / (ducks_price_sell - undercut_buy))
+                for price in range(int(undercut_buy), int(ducks_price_sell)):
+                    orders.append(Order("ORCHIDS", price, vol_bin))
+
         curr_pos = self.position["ORCHIDS"]
-
-        if undercut_buy < ducks_price_sell:
-            vol_bin = int(100 / (ducks_price_sell - undercut_buy))
-            for price in range(int(undercut_buy), int(ducks_price_sell)+1):
-                orders.append(Order("ORCHIDS", price, vol_bin))
-
-
         ## for orders with value, duck - 1, to undercut_buy
         num_buy_bins = int(ducks_price_buy) - int(undercut_buy)
         if num_buy_bins > 0:
@@ -276,29 +267,15 @@ class Trader:
                 orders.append(Order("ORCHIDS", price, volume_bins[i]))
                 i+=1
 
+            if undercut_sell > ducks_price_buy:
+                vol_bin = int(-ORCHIDS_POS_LIMIT / (undercut_sell - ducks_price_buy))
+                for price in range(int(ducks_price_buy) + 1, int(undercut_sell) + 1 ):
+                    orders.append(Order("ORCHIDS", price, vol_bin))
 
         return orders
 
-
-        ## Checking if we can put an order for mm by buying from other markets
-        
-
-    # def compute_orders_orchids(self, order_depth):
-    #     orders: list[Order] = []
-
-    #     buy_orders = list(order_depth.buy_orders.items())
-    #     sell_orders = list(order_depth.sell_orders.items())
-    #     best_ask, best_ask_amount = sell_orders[0]
-    #     best_bid, best_bid_amount = buy_orders[0]
-
-    #     orders.append(Order("ORCHIDS", best_bid, -best_bid_amount))
-
-    #     return orders
-
-
     def run(self, state: TradingState):
         result = {'AMETHYSTS': [], 'STARFRUIT': [], 'ORCHIDS': []}
-        # result = {'ORCHIDS': []}
 
         traderData = ""
         conversions = 0
@@ -347,37 +324,15 @@ class Trader:
 
         ducks_price_selling = state.observations.conversionObservations["ORCHIDS"].askPrice + state.observations.conversionObservations["ORCHIDS"].importTariff + state.observations.conversionObservations["ORCHIDS"].transportFees
         ducks_price_buying = state.observations.conversionObservations["ORCHIDS"].bidPrice - state.observations.conversionObservations["ORCHIDS"].exportTariff - state.observations.conversionObservations["ORCHIDS"].transportFees 
-        # if state.timestamp < 500:
-        #     # Buying shit out right now
-        #     result['ORCHIDS'].append(Order("ORCHIDS", best_ask, -best_ask_amount))
-
-        # Selling stuff and keeping
-        # if state.timestamp < 500:
-        #     result['ORCHIDS'].append(Order("ORCHIDS", best_bid, -best_bid_amount))
-        
-        # if state.timestamp > 0: 
-        #     ## Thinning the market
-        #     curr_pos = self.position[]
-
-        # else:
-        #     #Checking for arbitrage oppourtunities
-        #     if best_ask < state.observations.conversionObservations["ORCHIDS"].bidPrice - state.observations.conversionObservations["ORCHIDS"].exportTariff - state.observations.conversionObservations["ORCHIDS"].transportFees:
-        #         result['ORCHIDS'].append(Order("ORCHIDS", best_ask, -best_ask_amount))
-        #         conversions = best_ask_amount
 
         result["ORCHIDS"] += self.orders_mm_orchids(order_depth, ducks_price_selling, ducks_price_buying)
 
         curr_pos = self.position["ORCHIDS"]
-
         if undercut_sell > state.observations.conversionObservations["ORCHIDS"].askPrice + state.observations.conversionObservations["ORCHIDS"].importTariff + state.observations.conversionObservations["ORCHIDS"].transportFees and curr_pos < 0:
-            # orders.append(Order("ORCHIDS", best_ask, -best_ask_amount))
             conversions = -curr_pos
-        
         curr_pos = self.position["ORCHIDS"]
         if undercut_buy < state.observations.conversionObservations["ORCHIDS"].bidPrice - state.observations.conversionObservations["ORCHIDS"].exportTariff - state.observations.conversionObservations["ORCHIDS"].transportFees and curr_pos > 0:
-            # orders.append(Order("ORCHIDS", best_bid, -best_bid_amount))
             conversions = -curr_pos
         
-
         logger.flush(state, result, conversions, traderData)
         return result, conversions, traderData
