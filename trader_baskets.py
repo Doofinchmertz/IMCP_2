@@ -157,7 +157,7 @@ class Trader:
         return strawberries
 
     def get_orders_basket(self, state: TradingState):
-        GIFT_BASKET_POS_LIMIT = 60
+
         gift_basket = []
         chocolate = []
         strawberries = []
@@ -178,38 +178,9 @@ class Trader:
         if (len(self.spread_cache) > 3):
             spread_recent = np.mean(np.array(self.spread_cache[-3:]))
             if (spread_recent < avg_spread - 2*std_spread):
-                mid_price_basket = int(mid_price_basket)
-                num_buy_bins = mid_price_basket - best_bid_basket - 1
-                if num_buy_bins > 0:
-                    curr_pos = self.position["GIFT_BASKET"]
-                    weights_bin = [0] * num_buy_bins
-                    weights_bin[0] = 1
-                    for i in range(1, num_buy_bins):
-                        weights_bin[i] = 0.4*weights_bin[i-1]
-                    ## normalise the weights:
-                    sum_weights = sum(weights_bin)
-                    volume_bins = [int((x/sum_weights)*(GIFT_BASKET_POS_LIMIT - curr_pos)) for x in weights_bin]
-                    i = 0
-                    for price in range(mid_price_basket - 1, best_bid_basket ,-1):
-                        gift_basket.append(Order("GIFT_BASKET", price, volume_bins[i]))
-                        i+=1
-
+                gift_basket.append(Order("GIFT_BASKET", best_ask_basket, -best_ask_volume_basket))
             elif (spread_recent > avg_spread + 2*std_spread):
-                mid_price_basket = int(mid_price_basket)
-                num_sell_bins = best_ask_basket - mid_price_basket - 1
-                if num_sell_bins > 0:
-                    curr_pos = self.position["GIFT_BASKET"]
-                    weights_bin = [0] * num_sell_bins
-                    weights_bin[0] = 1
-                    for i in range(1, num_sell_bins):
-                        weights_bin[i] = 0.4*weights_bin[i-1]
-                    ## normalise the weights:
-                    sum_weights = sum(weights_bin)
-                    volume_bins = [int((x/sum_weights)*(-GIFT_BASKET_POS_LIMIT - curr_pos)) for x in weights_bin]
-                    i = 0
-                    for price in range(mid_price_basket + 1, best_ask_basket):
-                        gift_basket.append(Order("GIFT_BASKET", price, volume_bins[i]))
-                        i+=1
+                gift_basket.append(Order("GIFT_BASKET", best_bid_basket, -best_bid_volume_basket))
         
         # strawberries = self.get_orders_strawberries(best_bid_strawberries, best_ask_strawberries, mid_price_strawberries, best_bid_volume_strawberries, best_ask_volume_strawberries)
 
