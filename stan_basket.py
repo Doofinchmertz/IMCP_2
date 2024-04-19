@@ -131,6 +131,8 @@ class Trader:
                 self.cont_buy_basket_unfill += 2
                 pb_pos += vol
 
+        ## checking chocolate and strawberries position
+
         # if int(round(self.person_position['Olivia']['ROSES'])) > 0:
 
         #     val_ord = self.POSITION_LIMIT['ROSES'] - uku_pos
