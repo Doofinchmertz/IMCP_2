@@ -1,35 +1,22 @@
 import pandas as pd
-import plotly.graph_objs as go
+import numpy as np
 
-df = pd.read_csv('round-2-island-data-bottle/prices_round_2_day_1.csv', sep=';')
+df0 = pd.read_csv("round-3-island-data-bottle/prices_round_3_day_0.csv", sep=";")
+df1 = pd.read_csv("round-3-island-data-bottle/prices_round_3_day_1.csv", sep=";")
+df2 = pd.read_csv("round-3-island-data-bottle/prices_round_3_day_2.csv", sep=";")
+df = pd.concat([df0, df1, df2])
 
-trace1 = go.Scatter(x=df['timestamp'], y=df['ORCHIDS'], mode='lines', name='prices', yaxis='y1')
-trace2 = go.Scatter(x=df['timestamp'], y=df['SUNLIGHT'], mode='lines', name='sunlight', yaxis='y2')
-trace3 = go.Scatter(x=df['timestamp'], y=df['HUMIDITY'], mode='lines', name='humidity', yaxis='y3')
 
-layout = go.Layout(
-    title='Variation of different parameters',
-    yaxis=dict(
-        title='prices',
-        side='left',
-        anchor='x'
-    ),
-    yaxis2=dict(
-        title='sunlight',
-        side='right',
-        overlaying='y',
-        anchor='x'
-    ),
-    yaxis3=dict(
-        title='humidity',
-        side='right',
-        overlaying='y',
-        anchor='free',
-        position=0.95
-    )
-)
+df_chocolate = df[df["product"] == "CHOCOLATE"]
+df_strawberries = df[df["product"] == "STRAWBERRIES"]
+df_roses = df[df["product"] == "ROSES"]
+df_gift_basket = df[df["product"] == "GIFT_BASKET"]
 
-fig = go.Figure(data=[trace1, trace2, trace3], layout=layout)
+df_chocolate.reset_index(drop=True, inplace=True)
+df_strawberries.reset_index(drop=True, inplace=True)
+df_roses.reset_index(drop=True, inplace=True)
+df_gift_basket.reset_index(drop=True, inplace=True)
 
-fig.show()
+arr_spread = np.array(df_gift_basket['mid_price'] - 4*df_chocolate['mid_price'] - 6*df_strawberries['mid_price'] - df_roses['mid_price'])
 
+print("Mean spread: ", np.mean(arr_spread), "Std spread: ", np.std(arr_spread))
