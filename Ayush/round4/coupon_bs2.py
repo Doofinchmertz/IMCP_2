@@ -168,16 +168,16 @@ class Trader:
             
         # Calculating the bs price
         bs_price = self.black_scholes_price(mid_price['COCONUT'], (247 - self.timestamp_curr / 1000000) / 250, 0.0, self.volatility, 10000)
-        logger.print(f"bs_price: {bs_price}, mid_price: {mid_price['COCONUT']}, diff: {bs_price - mid_price['COCONUT']}")
+        logger.print(f"bs_price: {bs_price}, mid_price: {mid_price['COCONUT_COUPON']}, diff: {bs_price - mid_price['COCONUT_COUPON']}")
         diff = mid_price['COCONUT_COUPON'] - bs_price
 
         curr_pos = self.position['COCONUT_COUPON']
 
-        if diff > 0:
+        if diff < -65:
             vol = min(100, self.POSITION_LIMIT['COCONUT_COUPON'] - curr_pos)
             orders['COCONUT_COUPON'].append(Order('COCONUT_COUPON', best_sell['COCONUT_COUPON'], vol))
 
-        if diff < 0:
+        if diff > 45:
             orders['COCONUT_COUPON'].append(Order('COCONUT_COUPON', best_buy['COCONUT_COUPON'], -self.POSITION_LIMIT['COCONUT_COUPON'] - curr_pos))
 
         return orders
