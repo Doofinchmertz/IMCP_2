@@ -3,6 +3,7 @@ from typing import Any
 import string
 import numpy as np
 import json
+import statistics
 
 class Logger:
     def __init__(self) -> None:
@@ -304,6 +305,11 @@ class Trader:
                 i+=1
 
         return orders
+    
+    def black_scholes_price(self, S, T, r, sigma, K = 10000):
+        d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
+        d2 = d1 - sigma * np.sqrt(T)
+        return S * statistics.NormalDist().cdf(d1) - K * np.exp(-r * T) * statistics.NormalDist().cdf(d2)
     
     def get_order_coupon(self, state: TradingState):
         order = []
