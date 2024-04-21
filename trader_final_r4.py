@@ -1,9 +1,16 @@
+from typing import Dict, List
 from datamodel import Listing, Observation, Order, OrderDepth, ProsperityEncoder, Symbol, Trade, TradingState
 from typing import Any
 import string
-import numpy as np
 import json
-import statistics
+import numpy as np
+import collections
+from collections import defaultdict
+import random
+import math
+import copy
+import numpy as np
+import statistics 
 
 class Logger:
     def __init__(self) -> None:
@@ -112,11 +119,15 @@ logger = Logger()
 
 class Trader:
     
+    
+    POSITION_LIMIT = {"AMETHYSTS": 20, "STARFRUIT": 20, "ORCHIDS": 100, "GIFT_BASKET": 60, "CHOCOLATE": 250, "STRAWBERRIES": 350, "ROSES": 60, "COCONUT": 300, "COCONUT_COUPON": 600}
+
     position = {"AMETHYSTS": 0, "STARFRUIT": 0, "ORCHIDS": 0, "CHOCOLATE": 0, "STRAWBERRIES": 0, "ROSES": 0, "GIFT_BASKET": 0, "COCONUT": 0, "COCONUT_COUPON": 0}
     spread_cache = []
     spread_cache_size = 200
     starfruit_cache = []
     starfruit_dim = 4
+    timestamp_curr = 0
 
     def get_prices(self, state: TradingState, symbol: Symbol):
         buy_orders = list(state.order_depths[symbol].buy_orders.items())
@@ -335,9 +346,36 @@ class Trader:
             order.append(Order("COCONUT_COUPON", best_ask["COCONUT_COUPON"], vol))
 
         return order
+    
+    def co_coconut(self, order_depth):
+
+        orders = {'COCONUT' : [], 'COCONUT_COUPON': []}
+        prods = ['COCONUT', 'COCONUT_COUPON']
+        
+        mid_price, best_bid, best_bid_volume, best_ask, best_ask_volume = {}, {}, {}, {}, {}
+        for prod in ["COCONUT", "COCONUT_COUPON"]:
+            buy_orders = list(order_depth[prod].buy_orders.items())
+            sell_orders = list(order_depth[prod].sell_orders.items())
+            best_bid[prod], best_bid_volume[prod] = buy_orders[0]
+            best_ask[prod], best_ask_volume[prod] = sell_orders[0]
+            mid_price[prod] = (best_bid[prod] + best_ask[prod]) / 2
+        
+        # theo_price = 10000 + np.sin(2 * np.pi * self.timestamp_curr / 4000000 + 2 * np.pi * 0.75) * 130
+        theo_price = 10000 + np.sin(2 * np.pi * self.timestamp_curr / 3400000 - np.pi * 0.1 + 2*np.pi * (3000000/3400000)) * 120
+        curr_pos = self.position['COCONUT']
+        if theo_price - mid_price['COCONUT'] > 50:
+            vol = min(100, self.POSITION_LIMIT['COCONUT'] - curr_pos)
+            orders['COCONUT'].append(Order('COCONUT', best_ask['COCONUT'], vol))
+
+        if theo_price - mid_price['COCONUT'] < -50:
+            vol = max(-100, -self.POSITION_LIMIT['COCONUT'] - curr_pos)
+            orders['COCONUT'].append(Order('COCONUT', best_bid['COCONUT'], vol))
+
+        return orders
 
     def run(self, state: TradingState):
         result = {'AMETHYSTS': [], 'STARFRUIT': [], 'ORCHIDS': [], 'GIFT_BASKET': [], 'CHOCOLATE': [], 'STRAWBERRIES': [], 'ROSES': [], 'COCONUT': [], 'COCONUT_COUPON': []}
+        
         traderData = ""
         conversions = 0
 
@@ -371,6 +409,7 @@ class Trader:
 
         result["GIFT_BASKET"], result["CHOCOLATE"], result["STRAWBERRIES"], result["ROSES"] = self.get_orders_basket(state)
 
+        self.timestamp_curr = state.timestamp
         order_depth = state.order_depths[Symbol("ORCHIDS")]
         buy_orders = list(order_depth.buy_orders.items())
         sell_orders = list(order_depth.sell_orders.items())
@@ -392,6 +431,9 @@ class Trader:
             conversions = -curr_pos
         
         result["COCONUT_COUPON"] += self.get_order_coupon(state)
+        
+        orders_coco = self.co_coconut(state.order_depths)
+        result["COCONUT"] += orders_coco['COCONUT']
 
         logger.flush(state, result, conversions, traderData)
         return result, conversions, traderData
