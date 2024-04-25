@@ -119,7 +119,8 @@ logger = Logger()
 
 class Trader:
     
-    
+    basket_std = 78
+
     POSITION_LIMIT = {"AMETHYSTS": 20, "STARFRUIT": 20, "ORCHIDS": 100, "GIFT_BASKET": 60, "CHOCOLATE": 250, "STRAWBERRIES": 350, "ROSES": 60, "COCONUT": 300, "COCONUT_COUPON": 600}
 
     position = {"AMETHYSTS": 0, "STARFRUIT": 0, "ORCHIDS": 0, "CHOCOLATE": 0, "STRAWBERRIES": 0, "ROSES": 0, "GIFT_BASKET": 0, "COCONUT": 0, "COCONUT_COUPON": 0}
@@ -127,6 +128,8 @@ class Trader:
     spread_cache_size = 200
     starfruit_cache = []
     starfruit_dim = 4
+    cont_buy_basket_unfill = 0
+    cont_sell_basket_unfill = 0
     timestamp_curr = 0
 
     def get_prices(self, state: TradingState, symbol: Symbol):
@@ -243,22 +246,84 @@ class Trader:
         best_bid_strawberries, best_ask_strawberries, mid_price_strawberries, best_bid_volume_strawberries, best_ask_volume_strawberries = self.get_prices(state, "STRAWBERRIES")
         best_bid_roses, best_ask_roses, mid_price_roses, best_bid_volume_roses, best_ask_volume_roses = self.get_prices(state, "ROSES")
 
-        spread = mid_price_basket - 4*mid_price_chocolate - 6*mid_price_strawberries - mid_price_roses
-        if len(self.spread_cache) == self.spread_cache_size:
-            self.spread_cache.pop(0)
-        self.spread_cache.append(spread)
+        # spread = mid_price_basket - 4*mid_price_chocolate - 6*mid_price_strawberries - mid_price_roses
+        # if len(self.spread_cache) == self.spread_cache_size:
+        #     self.spread_cache.pop(0)
+        # self.spread_cache.append(spread)
 
-        avg_spread = np.mean(np.array(self.spread_cache))
-        std_spread = np.std(np.array(self.spread_cache))
-        curr_pos = self.position["GIFT_BASKET"]
+        # avg_spread = np.mean(np.array(self.spread_cache))
+        # std_spread = np.std(np.array(self.spread_cache))
+        # curr_pos = self.position["GIFT_BASKET"]
 
-        if (len(self.spread_cache) > 3):
-            spread_3 = np.mean(np.array(self.spread_cache[-3:]))
-            if (spread_3 > avg_spread + 2*std_spread):
-                gift_basket.append(Order("GIFT_BASKET", best_ask_basket, min(GIFT_BASKET_POS_LIMIT - curr_pos, -best_ask_volume_basket)))
-            elif (spread_3 < avg_spread - 2*std_spread):
-                gift_basket.append(Order("GIFT_BASKET", best_bid_basket, max(-GIFT_BASKET_POS_LIMIT-curr_pos, -best_bid_volume_basket)))
-        
+        # if (len(self.spread_cache) > 3):
+        #     spread_3 = np.mean(np.array(self.spread_cache[-3:]))
+        #     if (spread_3 > avg_spread + 2*std_spread):
+        #         gift_basket.append(Order("GIFT_BASKET", best_ask_basket, min(GIFT_BASKET_POS_LIMIT - curr_pos, -best_ask_volume_basket)))
+        #     elif (spread_3 < avg_spread - 2*std_spread):
+        #         gift_basket.append(Order("GIFT_BASKET", best_bid_basket, max(-GIFT_BASKET_POS_LIMIT-curr_pos, -best_bid_volume_basket)))
+        orders = {'CHOCOLATE' : [], 'STRAWBERRIES': [], 'ROSES' : [], 'GIFT_BASKET' : []}
+        prods = ['CHOCOLATE', 'STRAWBERRIES', 'ROSES', 'GIFT_BASKET']
+        osell, obuy, best_sell, best_buy, worst_sell, worst_buy, mid_price, vol_buy, vol_sell = {}, {}, {}, {}, {}, {}, {}, {}, {}
+
+        for p in prods:
+            osell[p] = collections.OrderedDict(sorted(state.order_depths[p].sell_orders.items()))
+            obuy[p] = collections.OrderedDict(sorted(state.order_depths[p].buy_orders.items(), reverse=True))
+
+            best_sell[p] = next(iter(osell[p]))
+            best_buy[p] = next(iter(obuy[p]))
+
+            worst_sell[p] = next(reversed(osell[p]))
+            worst_buy[p] = next(reversed(obuy[p]))
+
+            mid_price[p] = (best_sell[p] + best_buy[p])/2
+            vol_buy[p], vol_sell[p] = 0, 0
+            for price, vol in obuy[p].items():
+                vol_buy[p] += vol 
+                if vol_buy[p] >= self.POSITION_LIMIT[p]/10:
+                    break
+            for price, vol in osell[p].items():
+                vol_sell[p] += -vol 
+                if vol_sell[p] >= self.POSITION_LIMIT[p]/10:
+                    break
+
+        res_buy = mid_price_basket - mid_price_chocolate*4 - mid_price_strawberries*6 - mid_price_roses - 376
+        res_sell = mid_price_basket - mid_price_chocolate*4 - mid_price_strawberries*6 - mid_price_roses - 376
+
+        trade_at = self.basket_std*0.5
+        close_at = self.basket_std*(-1000)
+
+        pb_pos = self.position['GIFT_BASKET']
+        pb_neg = self.position['GIFT_BASKET']
+
+        if self.position['GIFT_BASKET'] == self.POSITION_LIMIT['GIFT_BASKET']:
+            self.cont_buy_basket_unfill = 0
+        if self.position['GIFT_BASKET'] == -self.POSITION_LIMIT['GIFT_BASKET']:
+            self.cont_sell_basket_unfill = 0
+
+        do_bask = 0
+
+        if res_sell < -trade_at:
+            vol = self.position['GIFT_BASKET'] + self.POSITION_LIMIT['GIFT_BASKET']
+            self.cont_buy_basket_unfill = 0 # no need to buy rn
+            assert(vol >= 0)
+            if vol > 0:
+                do_bask = 1
+                basket_sell_sig = 1
+                gift_basket.append(Order('GIFT_BASKET', worst_buy['GIFT_BASKET'], -vol)) 
+                self.cont_sell_basket_unfill += 2
+                pb_neg -= vol
+                #uku_pos += vol
+        elif res_buy > trade_at:
+            vol = self.POSITION_LIMIT['GIFT_BASKET'] - self.position['GIFT_BASKET']
+            self.cont_sell_basket_unfill = 0 # no need to sell rn
+            assert(vol >= 0)
+            if vol > 0:
+                do_bask = 1
+                basket_buy_sig = 1
+                gift_basket.append(Order('GIFT_BASKET', worst_sell['GIFT_BASKET'], vol))
+                self.cont_buy_basket_unfill += 2
+                pb_pos += vol
+
         if Symbol("ROSES") in state.market_trades and len(state.market_trades[Symbol("ROSES")]) > 0:
             trades = state.market_trades[Symbol("ROSES")]
             buy_orders = list(state.order_depths[Symbol("ROSES")].buy_orders.items())
@@ -346,12 +411,12 @@ class Trader:
             best_bid[prod], best_bid_volume[prod] = buy_orders[0]
             best_ask[prod], best_ask_volume[prod] = sell_orders[0]
             mid_price[prod] = (best_bid[prod] + best_ask[prod]) / 2
-        r = 0.005
-        bs_price = self.black_scholes_price(mid_price["COCONUT"], 245/365, r, 0.192)
+        r = 0.01
+        bs_price = self.black_scholes_price(mid_price["COCONUT"], 245/365, r, 0.191)
         logger.print("BS Price: ", bs_price, "Mid Price: ", mid_price["COCONUT_COUPON"])
         diff = mid_price["COCONUT_COUPON"] - bs_price
         curr_pos  = self.position["COCONUT_COUPON"]
-        thres = 1.5
+        thres = 1
         if diff > thres:
             vol = max(-best_bid_volume["COCONUT_COUPON"], -COUPON_POS_LIMIT - curr_pos)
             order.append(Order("COCONUT_COUPON", best_bid["COCONUT_COUPON"], vol))
