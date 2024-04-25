@@ -57,7 +57,7 @@ class Trader:
     begin_dip_price = -INF
 
     std = 25
-    basket_std = 76
+    basket_std = 78
 
     def compute_orders_basket(self, order_depth):
 
@@ -86,8 +86,8 @@ class Trader:
                 if vol_sell[p] >= self.POSITION_LIMIT[p]/10:
                     break
 
-        res_buy = mid_price['GIFT_BASKET'] - mid_price['CHOCOLATE']*4 - mid_price['STRAWBERRIES']*6 - mid_price['ROSES'] - 375
-        res_sell = mid_price['GIFT_BASKET'] - mid_price['CHOCOLATE']*4 - mid_price['STRAWBERRIES']*6 - mid_price['ROSES'] - 375
+        res_buy = mid_price['GIFT_BASKET'] - mid_price['CHOCOLATE']*4 - mid_price['STRAWBERRIES']*6 - mid_price['ROSES'] - 376
+        res_sell = mid_price['GIFT_BASKET'] - mid_price['CHOCOLATE']*4 - mid_price['STRAWBERRIES']*6 - mid_price['ROSES'] - 376
 
         trade_at = self.basket_std*0.5
         close_at = self.basket_std*(-1000)
@@ -109,7 +109,7 @@ class Trader:
 
         do_bask = 0
 
-        if res_sell > trade_at:
+        if res_sell < -trade_at:
             vol = self.position['GIFT_BASKET'] + self.POSITION_LIMIT['GIFT_BASKET']
             self.cont_buy_basket_unfill = 0 # no need to buy rn
             assert(vol >= 0)
@@ -120,7 +120,7 @@ class Trader:
                 self.cont_sell_basket_unfill += 2
                 pb_neg -= vol
                 #uku_pos += vol
-        elif res_buy < -trade_at:
+        elif res_buy > trade_at:
             vol = self.POSITION_LIMIT['GIFT_BASKET'] - self.position['GIFT_BASKET']
             self.cont_sell_basket_unfill = 0 # no need to sell rn
             assert(vol >= 0)
